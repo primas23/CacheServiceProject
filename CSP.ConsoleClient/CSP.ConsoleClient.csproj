@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,6 +48,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CSP.CacheService\CSP.CacheService.csproj">
+      <Project>{b4ad27a3-0b23-456c-9fd9-0efd756b1268}</Project>
+      <Name>CSP.CacheService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CSP.Common\CSP.Common.csproj">
+      <Project>{5c3c1eb1-dd06-4da7-a5c4-b4e30b76835b}</Project>
+      <Name>CSP.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -28,13 +28,17 @@ namespace CSP.CacheService
                 {
                     if (HttpRuntime.Cache[itemName] == null)
                     {
-                        var data = getDataFunc();
-                        HttpRuntime.Cache.Insert(
+                        T data = getDataFunc();
+
+                        if (data != null)
+                        {
+                            HttpRuntime.Cache.Insert(
                             itemName,
                             data,
                             null,
                             DateTime.UtcNow.AddSeconds(durationInSeconds),
                             Cache.NoSlidingExpiration);
+                        }
                     }
                 }
             }
@@ -48,6 +52,11 @@ namespace CSP.CacheService
         /// <param name="itemName">Name of the item.</param>
         public void Remove(string itemName)
         {
+            if (string.IsNullOrWhiteSpace(itemName))
+            {
+                return;
+            }
+
             HttpRuntime.Cache.Remove(itemName);
         }
     }
