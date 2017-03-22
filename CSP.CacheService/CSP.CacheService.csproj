@@ -42,15 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\ICacheService.cs" />
     <Compile Include="HttpCacheAttribute.cs" />
     <Compile Include="HttpCacheService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CSP.Common\CSP.Common.csproj">
-      <Project>{5c3c1eb1-dd06-4da7-a5c4-b4e30b76835b}</Project>
-      <Name>CSP.Common</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

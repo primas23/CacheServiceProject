@@ -5,7 +5,7 @@ using Moq;
 using MSTestExtensions;
 
 using CSP.CacheService;
-using CSP.Common.Contracts;
+using CSP.CacheService.Contracts;
 
 namespace CSP.Tests.HttpCacheAttributeTests
 {

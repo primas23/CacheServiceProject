@@ -3,7 +3,7 @@ using System.Collections;
 using System.Web;
 using System.Web.Caching;
 
-using CSP.Common.Contracts;
+using CSP.CacheService.Contracts;
 
 namespace CSP.CacheService
 {

@@ -54,10 +54,6 @@
       <Project>{b4ad27a3-0b23-456c-9fd9-0efd756b1268}</Project>
       <Name>CSP.CacheService</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CSP.Common\CSP.Common.csproj">
-      <Project>{5c3c1eb1-dd06-4da7-a5c4-b4e30b76835b}</Project>
-      <Name>CSP.Common</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

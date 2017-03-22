@@ -79,10 +79,6 @@
       <Project>{B4AD27A3-0B23-456C-9FD9-0EFD756B1268}</Project>
       <Name>CSP.CacheService</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CSP.Common\CSP.Common.csproj">
-      <Project>{5C3C1EB1-DD06-4DA7-A5C4-B4E30B76835B}</Project>
-      <Name>CSP.Common</Name>
-    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
