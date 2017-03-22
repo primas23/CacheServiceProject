@@ -16,11 +16,11 @@ namespace CSP.CacheService
         /// <typeparam name="T">Any type</typeparam>
         /// <param name="itemName">Name of the item.</param>
         /// <param name="getDataFunc">The get data function.</param>
-        /// <param name="durationInSeconds">The duration in seconds.</param>
+        /// <param name="durationInSeconds">The duration in seconds. The defauld value is 10 minutes</param>
         /// <returns>
         /// The cached item value
         /// </returns>
-        public T Get<T>(string itemName, Func<T> getDataFunc, int durationInSeconds)
+        public T Get<T>(string itemName, Func<T> getDataFunc, int durationInSeconds = 60 * 10)
         {
             if (HttpRuntime.Cache[itemName] == null)
             {
