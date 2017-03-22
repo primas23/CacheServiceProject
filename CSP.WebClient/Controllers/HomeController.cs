@@ -10,7 +10,7 @@ namespace CSP.WebClient.Controllers
 {
     public class HomeController : Controller
     {
-        [HttpCache(300)]
+        [HttpCache]
         public ActionResult Index(string param)
         {
             return View();

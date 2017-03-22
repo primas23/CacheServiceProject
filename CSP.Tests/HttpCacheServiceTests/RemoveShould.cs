@@ -39,5 +39,20 @@ namespace CSP.Tests.HttpCacheServiceTests
             // Assert
             Assert.IsNotNull(HttpRuntime.Cache[name]);
         }
+
+        [TestMethod]
+        public void NotRemove_WhenNameIsNotSupplied()
+        {
+            // Arrange
+            Func<string> simpleString = () => "asdasdasdsbggagas";
+            const string name = "asdasd";
+
+            // Act
+            new HttpCacheService().Get(name, simpleString, 300);
+            new HttpCacheService().Remove(null);
+
+            // Assert
+            Assert.IsNotNull(HttpRuntime.Cache[name]);
+        }
     }
 }

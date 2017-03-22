@@ -26,8 +26,8 @@ namespace CSP.Tests.HttpCacheServiceTests
         {
             // Arrange
             HttpCacheService cacheService = new HttpCacheService();
-            Func<string> simpleString = () => "asdasdasdsbggagas";
-            const string name = "asdasd";
+            Func<string> simpleString = () => "ReturnCachedItem_WhenItemIsValidasdasdasdsbggagas";
+            const string name = "ReturnCachedItem_WhenItemIsValidasdasd";
 
             // Act
             string result = cacheService.Get(name, simpleString, 300);
@@ -40,8 +40,8 @@ namespace CSP.Tests.HttpCacheServiceTests
         public void ReturnCachedItem_WhenItemIsCalledTwoTime()
         {
             // Arrange
-            Func<string> simpleString = () => "asdasdasdsbggagas";
-            const string name = "asdasd";
+            Func<string> simpleString = () => "ReturnCachedItem_WhenItemIsCalledTwoTimeasdasdasdsbggagas";
+            const string name = "ReturnCachedItem_WhenItemIsCalledTwoTime";
 
             // Act
             string temp = new HttpCacheService().Get(name, simpleString, 300);
@@ -55,9 +55,9 @@ namespace CSP.Tests.HttpCacheServiceTests
         public void ReturnCachedItem_WhenItemIsChagedBeforeTheSecondCall()
         {
             // Arrange
-            Func<string> simpleString = () => "asdasdasdsbggagas";
-            Func<string> simpleStringSecond = () => "asdasdasdsbggagas2332323253235";
-            const string name = "asdasd";
+            Func<string> simpleString = () => "ReturnCachedItem_WhenItemIsChagedBeforeTheSecondCallasdasdasdsbggagas";
+            Func<string> simpleStringSecond = () => "ReturnCachedItem_WhenItemIsChagedBeforeTheSecondCallasdasdasdsbggagas2332323253235";
+            const string name = "ReturnCachedItem_WhenItemIsChagedBeforeTheSecondCall";
 
             // Act
             string temp = new HttpCacheService().Get(name, simpleString, 300);
@@ -72,7 +72,7 @@ namespace CSP.Tests.HttpCacheServiceTests
         {
             // Arrange
             Func<string> simpleString = () => null;
-            const string name = "asdasd";
+            const string name = "ReturnNUllItem_WhenDataIsNull";
 
             // Act
             string result = new HttpCacheService().Get(name, simpleString, 300);

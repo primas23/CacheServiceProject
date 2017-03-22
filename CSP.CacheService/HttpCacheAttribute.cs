@@ -21,8 +21,8 @@ namespace CSP.CacheService
         /// <summary>
         /// Initializes a new instance of the HttpCache Attribute with the duration.
         /// </summary>
-        /// <param name="duration">The duration.</param>
-        public HttpCacheAttribute(int duration)
+        /// <param name="duration">The duration. The default value is 10 minutes</param>
+        public HttpCacheAttribute(int duration = 60 * 10)
         {
             this.Duration = duration;
             this.CacheService = new HttpCacheService();
