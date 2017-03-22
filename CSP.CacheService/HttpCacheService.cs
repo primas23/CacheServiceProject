@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Web;
 using System.Web.Caching;
 
@@ -58,6 +59,19 @@ namespace CSP.CacheService
             }
 
             HttpRuntime.Cache.Remove(itemName);
+        }
+
+        /// <summary>
+        /// Clears the all the cache.
+        /// </summary>
+        public void Clear()
+        {
+            IDictionaryEnumerator enumerator = HttpRuntime.Cache.GetEnumerator();
+
+            while (enumerator.MoveNext())
+            {
+                HttpRuntime.Cache.Remove((string)enumerator.Key);
+            }
         }
     }
 }

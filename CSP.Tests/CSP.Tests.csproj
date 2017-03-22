@@ -65,6 +65,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="HttpCacheAttributeTests\ConstructorShould.cs" />
+    <Compile Include="HttpCacheServiceTests\ClearShould.cs" />
     <Compile Include="HttpCacheServiceTests\RemoveShould.cs" />
     <Compile Include="HttpCacheServiceTests\GetShould.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

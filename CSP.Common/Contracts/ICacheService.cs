@@ -19,5 +19,10 @@ namespace CSP.Common.Contracts
         /// </summary>
         /// <param name="itemName">Name of the item.</param>
         void Remove(string itemName);
+
+        /// <summary>
+        /// Clears the all the cache.
+        /// </summary>
+        void Clear();
     }
 }
