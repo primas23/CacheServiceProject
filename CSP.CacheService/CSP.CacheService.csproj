@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5C3C1EB1-DD06-4DA7-A5C4-B4E30B76835B}</ProjectGuid>
+    <ProjectGuid>{B4AD27A3-0B23-456C-9FD9-0EFD756B1268}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CSP.Common</RootNamespace>
-    <AssemblyName>CSP.Common</AssemblyName>
+    <RootNamespace>CSP.CacheService</RootNamespace>
+    <AssemblyName>CSP.CacheService</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,8 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Contracts\ICacheService.cs" />
+    <Compile Include="CacheAttribute.cs" />
+    <Compile Include="HttpCacheService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CSP.Common\CSP.Common.csproj">
+      <Project>{5c3c1eb1-dd06-4da7-a5c4-b4e30b76835b}</Project>
+      <Name>CSP.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

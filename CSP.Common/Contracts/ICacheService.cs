@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CSP.Common
+namespace CSP.Common.Contracts
 {
     public interface ICacheService
     {
