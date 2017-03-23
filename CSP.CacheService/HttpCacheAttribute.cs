@@ -14,15 +14,23 @@ namespace CSP.CacheService
     [AttributeUsage(AttributeTargets.Method, AllowMultiple = true)]
     public class HttpCacheAttribute : FilterAttribute, IActionFilter
     {
-        private int _duration;
+        private int _duration = 60 * 10;
         private ICacheService _cacheService;
         private string _name = null;
 
         /// <summary>
+        /// Initializes a new instance of the HttpCache Attribute with the duration set to 10 minutes.
+        /// </summary>
+        public HttpCacheAttribute()
+        {
+            this.CacheService = new HttpCacheService();
+        }
+
+        /// <summary>
         /// Initializes a new instance of the HttpCache Attribute with the duration.
         /// </summary>
-        /// <param name="duration">The duration. The default value is 10 minutes</param>
-        public HttpCacheAttribute(int duration = 60 * 10)
+        /// <param name="duration">The duration in seconds.</param>
+        public HttpCacheAttribute(int duration)
         {
             this.Duration = duration;
             this.CacheService = new HttpCacheService();
@@ -31,7 +39,7 @@ namespace CSP.CacheService
         /// <summary>
         /// Initializes a new instance of the HttpCache Attribute with the duration and cache service.
         /// </summary>
-        /// <param name="duration">The duration.</param>
+        /// <param name="duration">The duration in seconds.</param>
         /// <param name="cacheService">The cache service you want to use.</param>
         public HttpCacheAttribute(int duration, ICacheService cacheService)
         {
@@ -49,7 +57,7 @@ namespace CSP.CacheService
         /// Gets or sets the duration.
         /// </summary>
         /// <value>
-        /// The duration.
+        /// The duration in seconds.
         /// </value>
         public int Duration
         {
