@@ -66,11 +66,14 @@ namespace CSP.CacheService
         /// </summary>
         public void Clear()
         {
-            IDictionaryEnumerator enumerator = HttpRuntime.Cache.GetEnumerator();
-
-            while (enumerator.MoveNext())
+            lock (LockObject)
             {
-                HttpRuntime.Cache.Remove((string)enumerator.Key);
+                IDictionaryEnumerator enumerator = HttpRuntime.Cache.GetEnumerator();
+
+                while (enumerator.MoveNext())
+                {
+                    HttpRuntime.Cache.Remove((string)enumerator.Key);
+                }
             }
         }
     }
